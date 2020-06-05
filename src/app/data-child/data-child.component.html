@@ -1,0 +1,39 @@
+<form  #dataForm="ngForm" (ngSubmit)="onSave(dataForm)" class="">                        
+            
+    <div class="form-group d-flex flex-column">
+       <label for="prenom">Prenom</label>
+        <input class="form-control" id="prenom"
+         required
+         ngModel
+         name = "prenom"                   
+        >       
+    </div>          
+    <div class="form-group d-flex flex-column"> 
+        <label for="nom">Nom</label>
+        <input id="nom" class="form-control"
+        required
+        ngModel
+        name = "nom"                 
+        >                                       
+    </div> 
+      <div class="form-group d-flex flex-column">
+        <label for="status">Status pour la vente</label>
+         <select class="form-control" name="status" id="status"  required ngModel  #Type="ngModel">
+           <option value="présent" >Présent</option>
+           <option value="absent" >Absent</option>
+           <option value="peut-être" >Peut-être</option>            
+         </select>                               
+    </div>  
+    <div class="form-group d-flex flex-column">
+        <label for="sexe">Sexe</label>
+         <select class="form-control" name="sexe" id="sexe"  required ngModel  #Type="ngModel">
+           <option value="m" >M</option>
+           <option value="f" >F</option>                      
+         </select>                               
+    </div>      
+    
+    <div *ngIf="dataForm.valid" class="form-group d-flex justify-content-start">
+    <button type="submit" class="btn btn-primary text-uppercase px-5 my-3 w-30">Save</button>                  
+    </div>     
+  
+</form>     

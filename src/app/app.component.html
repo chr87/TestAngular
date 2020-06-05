@@ -1,0 +1,15 @@
+<div class="container"></div>
+<div class="row no-gutters">
+  <div class="col-6 offset-3">
+<h1 class="text-center mb-5"> {{eslogan}}</h1>
+ 
+<app-data-child (data)="show($event)"></app-data-child>
+
+<div class="mt-5" *ngIf="data">
+ <p class="text-uppercase"> Prenom: {{data.prenom}}</p>
+ <p class="text-uppercase"> Nom: {{data.nom}}</p>
+ <p class="text-uppercase">Status: {{data.status}}</p> 
+ <p class="text-uppercase"> Sexe: {{data.sexe}}</p>
+</div>
+</div>
+</div>
